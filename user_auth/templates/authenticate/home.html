@@ -1,0 +1,15 @@
+{% extends 'authenticate/base.html' %}
+{% block content %}
+<br/>
+<div class="container">
+    <div class="jumbotron shadow p-3 mb-5">
+    <h4 class="display-6">Status</h4>
+    {% if user.is_authenticated %}
+        <p class="lead">User Name : {{ user.username }} is currently logged into the system.</p><hr class="my-4">
+        <p>  Welcome To The Super Amazing App {{ user.first_name }} {{ user.last_name }}</p>
+    {% else %}
+        <p class="lead">No One Is Currently Logged Into The System.</p>
+    {% endif %}
+    </div>
+</div>
+{% endblock %}
